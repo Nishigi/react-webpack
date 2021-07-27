@@ -2,7 +2,8 @@ function fav(c) {
     return c
 }
 
-@fav
+// @fav
+
 class Dog {
     constructor(name) {
         this.name = name

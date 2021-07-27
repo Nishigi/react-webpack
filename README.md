@@ -1,12 +1,10 @@
 react 项目搭建 at 2021-7-26
 
-# webpack入门
+# webpack
 
 - 安装webpack相关工具
 - 学习webpack配置文件编写
 - 学习webpack几个核心概念
-
-## 理解webpack
 
 - 作用：把前端工程化中各种资源文件打包并编译成静态资源（html、css、es5版本的js、图片资源）
 
@@ -14,4 +12,4 @@ react 项目搭建 at 2021-7-26
 
 - webpack是核心API包
 
-- webpack-cli是
+- webpack-cli是webpack命令行的工具包

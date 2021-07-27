@@ -33,7 +33,7 @@ module.exports = {//15：25
             // { test: /\.(jpg|png|gif|svg|ico)$/, use: 'file-loader' },
             // v5写法无需安装依赖
             {
-                test: /\.(jpg|png|gif|svg|ico)$/i,
+                test: /\.(jpg|png|gif|svg)$/i,
                 type: 'asset/resource'
             },
             {
