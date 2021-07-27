@@ -1,7 +1,8 @@
-import { React } from "react";
+import React from "react";
 
 // export default class App extends React.
 
-export default function App() {
+function App() {
     return <div>Hello React···App.jsx</div>
 }
+export default App

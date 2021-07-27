@@ -10,7 +10,7 @@ module.exports = {//15：25
         vendor: ['react', 'react-dom'],
         app: {
             import: resolve('./src/main.js'),
-            dependOn: ['vendor', 'jq']
+            dependOn: ['vendor']
         }
     },
     output: {//出口
