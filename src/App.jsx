@@ -1,9 +1,13 @@
 import React from "react";
-import Music from "@/views/Music";
+// import Music from "@/views/Music";
+import StudyJSX from "@/views/study/StudyJSX";
 
-// export default class App extends React.
-
+const ele = <StudyJSX />
 function App() {
-    return <Music />
+    return (
+        <>
+            {ele}
+        </>
+    )
 }
 export default App

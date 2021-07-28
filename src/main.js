@@ -1,5 +1,12 @@
 // import fetch from './utils/axios'
-// console.log('hello-world');
+
+console.log('hello-world');//eslint-disable-line
+
+/*eslint-disable */
+console.log('this');
+console.log('main');
+/*eslint-enable */
+
 // fetch()
 
 // import logo from './assets/bear.png'

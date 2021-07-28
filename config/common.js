@@ -36,14 +36,11 @@ module.exports = {//15：25
             // v4写法需要file-loader依赖
             // { test: /\.(jpg|png|gif|svg|ico)$/, use: 'file-loader' },
             // v5写法无需安装依赖
-            {
-                test: /\.(jpg|png|gif|svg)$/i,
-                type: 'asset/resource'
-            },
-            {
-                test: /\.(scss|sass|css)$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader']
-            },
+            // {
+            //     test: /\.(jpg|png|gif|svg)$/i,
+            //     type: 'asset/resource'
+            // },
+
             // {
             //     test: /\.(js|jsx|ts|tsx)$/i,
             //     use: ['babel-loader'],

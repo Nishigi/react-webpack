@@ -2,8 +2,10 @@
 const { resolve } = require('./utils')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+const smp = new SpeedMeasurePlugin()
 
-module.exports = {
+module.exports = smp.wrap({
     mode: 'development',
     // 当src源码报错时，在浏览器控制台中打印的代码行号是源码位置，而不是编译后的代码位置。
     devtool: 'inline-source-map',
@@ -32,6 +34,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(scss|sass|css)$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(jpg|png|gif|svg)$/i,
+                type: 'asset/resource'
+            },
+            {
                 test: /\.(js|jsx)$/i,
                 use: [
                     'cache-loader',
@@ -45,5 +55,9 @@ module.exports = {
         alias: {
             'react': resolve('node_modules/react/cjs/react.development.js')
         }
+    },
+    optimization: {
+        // 开启TerserPlugin压缩
+        minimize: false,
     }
-}
+})
