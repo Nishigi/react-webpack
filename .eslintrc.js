@@ -1,4 +1,12 @@
 module.exports = {
+    extends: [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+
+    plugins: ["react"],
+
+    // 检测指定项
     parserOptions: {
         ecmaVersion: 6,
         sourceType: "module",
@@ -6,7 +14,13 @@ module.exports = {
             jsx: true
         }
     },
-    rules: {
 
+    env: {
+        es6: true,
+        browser: true,
+        node: false
+    },
+    rules: {
+        "semi": "off"
     }
 }

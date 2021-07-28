@@ -3,7 +3,7 @@ node_modules
 /dist
 day*
 tools
-
+.eslintignore
 
 # local env files
 .env.local

@@ -1,6 +1,6 @@
-function fav(c) {
-    return c
-}
+// function fav(c) {
+//     return c
+// }
 
 // @fav
 

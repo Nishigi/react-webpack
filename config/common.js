@@ -1,6 +1,7 @@
 //开发环境和生产环境都相同的配置
 const { resolve } = require('./utils')
 const webpack = require('webpack')
+const HappyPack = require('happypack')
 module.exports = {//15：25
     // entry: {//入口
     //     path: resolve('./src/main.js'),
@@ -25,7 +26,10 @@ module.exports = {//15：25
         clean: true
     },
     plugins: [
-        new webpack.ProgressPlugin({})
+        new webpack.ProgressPlugin({}),
+
+        // 支持多线程构建
+        new HappyPack({ loaders: ['babel-loader'] })
     ],
     module: {
         rules: [
@@ -40,11 +44,26 @@ module.exports = {//15：25
                 test: /\.(scss|sass|css)$/i,
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
+            // {
+            //     test: /\.(js|jsx|ts|tsx)$/i,
+            //     use: ['babel-loader'],
+            //     exclude: /node_modules/
+            // },
+            // 开启多线程来加载并编译.js代码
             {
-                test: /\.(js|jsx|ts|tsx)$/i,
-                use: ['babel-loader'],
+                test: /\.(js|jsx)$/i,
+                use: [
+                    { loader: 'happypack/loader', options: { threads: 3 } }
+                ],
                 exclude: /node_modules/
-            },
+            }
         ]
+    },
+    resolve: {//路径解析优化
+        modules: ['node_modules'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        alias: {
+            '@': resolve('src')//指定@为默认src文件夹
+        }
     }
 }

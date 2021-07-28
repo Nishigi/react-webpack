@@ -1,8 +1,12 @@
 //生产环境的配置
 const { resolve } = require('./utils')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 module.exports = {
     mode: 'production',
+    devtool: 'source-map',
+    cache: false,
     output: {
         // 打包后前缀路径
         publicPath: './static/',
@@ -15,7 +19,24 @@ module.exports = {
             minify: true,
             inject: 'body',
             title: 'React',
-            scriptLoading: 'blocking'
+            scriptLoading: 'blocking',
+            favicon: resolve('public/favicon.ico')
         }),
+        new MiniCssExtractPlugin({
+            filename: '[name].[chunkhash].css'
+        })
     ],
+    module: {
+        rules: [
+            {
+                test: /\.(css|scss)$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+            },
+        ],
+    },
+    resolve: {
+        alias: {
+            'react': resolve('node_modules/react/cjs/react.production.min.js')
+        }
+    }
 }
