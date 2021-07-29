@@ -9,11 +9,12 @@ import React from "react";
 // 7-JSX{}里只能写表达式，不能使用语句
 // 8-JSX中表达式的返回值，如果是文本直接参与视图渲染 
 // 9-JSX{}表达式的返回值可以是数组
-// 10-JSX使用动态属性也可以用{}包起来
-// 11-JSX中有三个特殊属性：classNmae 、htmlFor 、tabIndex
-// 12-JSX中新增了三个新属性：key，dangerouslySetInnerHTML，
-// 13-JSX{}语法可以防注入攻击（XSS）
-// 14-JSX是不可变对象 
+// 10-JSX中使用style时，{}可以放样式CSS键值对象：style={color:'red'}
+// 11-JSX使用动态属性也可以用{}包起来
+// 12-JSX中有三个特殊属性：classNmae 、htmlFor 、tabIndex
+// 13-JSX中新增了三个新属性：key 、ref、dangerouslySetInnerHTML
+// 14-JSX{}语法可以防注入攻击（XSS）
+// 15-JSX是不可变对象 
 const e = (
     <div>
         <h1>this-JSX</h1>
