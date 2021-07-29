@@ -14,7 +14,11 @@ import React from "react";
 // 12-JSX中有三个特殊属性：classNmae 、htmlFor 、tabIndex
 // 13-JSX中新增了三个新属性：key 、ref、dangerouslySetInnerHTML
 // 14-JSX{}语法可以防注入攻击（XSS）
-// 15-JSX是不可变对象 
+// 15-JSX是不可变对象,当使用this.setState()修改声明式变量时，
+// 会重新触发render函数返回全新JSX对象，进一步得到新的虚拟DOM，
+// 再与上一个旧的虚拟DOM进行diff运算，
+// 找出两个虚拟DOM最小差值（脏节点）然后把脏节点更新到视图中去。
+
 const e = (
     <div>
         <h1>this-JSX</h1>

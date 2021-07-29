@@ -9,6 +9,8 @@ function HelloChild(props) {
     return (
         <div>
             <h2>子组件</h2>
+            {/* <div>{props.title}</div>
+            <div>{props.name}</div> */}
         </div>
     )
 }
@@ -18,7 +20,7 @@ export default class StudyProps extends React.Component {
             <div>
                 <h1>Props</h1>
                 <hr />
-                <HelloChild title={11} />
+                <HelloChild title={'嗄'} name={'咕咕咕'} />
             </div>
         )
     }
