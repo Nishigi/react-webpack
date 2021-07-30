@@ -9,8 +9,8 @@ function HelloChild(props) {
     return (
         <div>
             <h2>子组件</h2>
-            {/* <div>{props.title}</div>
-            <div>{props.name}</div> */}
+            <div>{props.title}</div>
+            <div>{props.name}</div>
         </div>
     )
 }

@@ -21,6 +21,7 @@ module.exports = {
         node: false
     },
     rules: {
-        "semi": "off"
+        "semi": "off",
+        'react/prop-types': 'off'
     }
 }
