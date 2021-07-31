@@ -2,7 +2,7 @@ import React from "react";
 // import Music from "@/views/Music";
 // import StudyJSX from "@/views/study/StudyJSX";
 // import StudyComponent from "@/views/study/StudyComponent";
-import StudyCommu from "@/views/study/StudyCommu";
+import StudyState from "@/views/study/StudyState";
 
 // const ele = <StudyJSX />
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <>
             {/* {ele} */}
             {/* <StudyComponent /> */}
-            <StudyCommu />
+            <StudyState />
         </>
     )
 }
