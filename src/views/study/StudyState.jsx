@@ -12,7 +12,9 @@ export default class StudyState extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            count: 1
+            count: 1,
+            name: 'gs',
+            show: true
         }
     }
     changeNum(type) {
@@ -23,9 +25,18 @@ export default class StudyState extends React.Component {
         }, () => { console.log('new count', this.state.count) })
         console.log('old count', this.state.count)
     }
+    changeName() {
+        this.setState({
+            name: 'cgs'
+        })
+    }
+    changeShow() {
+        this.setState((state) => ({ show: !state.show }))
+    }
     render() {
         //do something
-        let { count } = this.state
+        console.log('----render-----');
+        let { count, name, show } = this.state
         return (
             <div>
                 <h1>State使用</h1>
@@ -33,7 +44,14 @@ export default class StudyState extends React.Component {
                 <div> {count}</div>
                 <button onClick={() => this.changeNum('add')}>自增</button>
                 <button onClick={() => this.changeNum('sub')}>自减</button>
+                <hr />
+                <h2>{name}</h2>
+                <button onClick={() => { this.changeName() }}>改名</button>
+                <hr />
+                {show && <h3>this state</h3>}
+                <button onClick={() => { this.changeShow() }}>Show/hide</button>
             </div>
+
         )
     }
 }
