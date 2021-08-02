@@ -9,6 +9,6 @@ module.exports = function (api) {
         //babel插件:用于弥补预设中的漏洞和不足
         plugins: [
             ['@babel/plugin-proposal-decorators', { legacy: true }]
-        ],
+        ]
     }
 }
