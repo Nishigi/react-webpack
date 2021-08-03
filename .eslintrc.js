@@ -4,7 +4,7 @@ module.exports = {
         "plugin:react/recommended"
     ],
 
-    plugins: ["react"],
+    plugins: ["react", "react-hooks"],
 
     // 检测指定项
     parserOptions: {
@@ -23,6 +23,8 @@ module.exports = {
     rules: {
         "semi": "off",
         'react/prop-types': 'off',
-        'no-unused-vars': 'off'
+        'no-unused-vars': 'off',
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
     }
 }
