@@ -6,9 +6,9 @@ import ThemeCtx from '@/utils/theme'
 // import StudyHooks from "@/views/study/StudyHooks";
 import StudyContext from "@/views/study/StudyContext";
 // import StudyForm from "@/views/study/StudyForm";
-
+import 'antd/dist/antd.css';
 import { HashRouter, BrowserRouter, Route } from "react-router-dom";
-// import { Button } from "antd";
+import { Button } from "antd";
 
 // cnode
 // import fetch from '@/utils/axios'
@@ -78,6 +78,7 @@ function App() {
             <ThemeCtx.Provider value={theme}>
                 {/* <StudyContext /> */}
                 {/* <StudyForm /> */}
+                <Button type="primary">点击</Button>
                 <div
                     style={{
                         width: " 200px",
