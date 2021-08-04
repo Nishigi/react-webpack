@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
-// 在React中事件名都是以on开头，比如onClick、onChange、onKeyUp等这种事件叫做React合成事件
+// 事件绑定
+// 在React中的事件名，都是以on*开头的，比如onClick、onKeyUp等，这种事件叫做React合成事件。
+// 使用ES5的方式绑定事件，事件对象永远都是最后一个参数，还需要使用bind()来解决this指向问题。
+// 使用箭头函数的方式绑定事件，事件对象需要手动传递，this默认就指向当前组件的实例对象。
 
 export default class StudyEvent extends Component {
     constructor() {
