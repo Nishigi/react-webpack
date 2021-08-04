@@ -31,8 +31,8 @@ function App() {
         { id: 6, label: "客户端测试", tab: "test" },
     ])
 
-    useEffect(() => {
-        console.log('----请求数据----');
+    useEffect(() => {//监听页码
+        console.log('----监听page，tab变化----');
         let data = {
             tab,
             page,
@@ -41,28 +41,19 @@ function App() {
         };
         fetch("/topics", "get", data).then((res) => {
             setList(res)
-            console.log(res);
+            console.log("数据请求成功---list");
         });
-    }, [tab, page])
-    // useEffect(() => {//监听tab变化
-    //     console.log('----请求数据----');
-    //     let data = {
-    //         tab,
-    //         page,
-    //         limit: 5,
-    //         mdrender: true,
-    //     };
-    //     fetch("/topics", "get", data).then((res) => {
-    //         setList(res)
-    //         console.log(res);
-    //     });
-    // }, [tab])
+        // console.log(page);
+    }, [page, tab])
+    useEffect(() => {//监听tab
+        console.log('----tab变化----');
+        setPage(1)
+    }, [tab])
 
-    // console.log(list);
-    function changeOn(val) {
+    function changeOn(val) { //改变tab
         setTab(val)
     }
-    function changePage(val) {
+    function changePage(val) {//改变页码
         setPage(val)
     }
 
